@@ -489,6 +489,36 @@ h1, h2, h3, h4, h5, h6 {
     border-radius: 50%;
     animation: spin 2s linear infinite;
 }
+.training-loader {
+    width: 32px;
+    height: 32px;
+    position: relative;
+    margin: 12px auto 0;
+}
+
+.training-loader::before,
+.training-loader::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    border: 3px solid transparent;
+}
+
+.training-loader::before {
+    border-top-color: #d6a000;   /* yellow */
+    animation: spin 1s linear infinite;
+}
+
+.training-loader::after {
+    border-bottom-color: #ffffff33; /* soft white tint */
+    animation: spin 1.3s linear infinite reverse;
+}
+
+@keyframes spin {
+    100% { transform: rotate(360deg); }
+}
+
 
 .trophy-glow {
     width: 30px;
@@ -1593,18 +1623,3 @@ body {
         transform: rotate(-45deg) translate(7px, -6px);
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
